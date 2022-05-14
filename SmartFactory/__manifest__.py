@@ -1,12 +1,14 @@
 {
-        'name': "Smart Factory",
+        'name': "SmartFactory",
         'version': '1.0',
         'author': 'Hiram Muñoz',
         'category': 'Manufacturing/Tec',
         'application': True,
         'depends': [
-            'base'
+                'base',
+                'website',
         ],
         'data': [
+                'templates.xml',
         ],
 }
