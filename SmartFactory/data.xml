@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="open-smart-factory" model="ir.actions.client">
+        <field name="name">Smart Factory</field>
+        <field name="tag">smart-factory-window</field>
+    </record>
+    <menuitem id="test_menu_root" name="Test">
+        <menuitem id="test_first_level_menu" name="First Level">
+            <menuitem id="test_model_menu_action" action="open-smart-factory"/>
+        </menuitem>
+    </menuitem>
+</odoo>

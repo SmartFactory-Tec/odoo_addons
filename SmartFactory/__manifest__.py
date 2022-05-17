@@ -5,10 +5,18 @@
         'category': 'Manufacturing/Tec',
         'application': True,
         'depends': [
-                'base',
-                'website',
+            'base',
+            'web',
         ],
         'data': [
-                'templates.xml',
+            "./data.xml"
         ],
+        'assets': {
+            'web.assets_backend': [
+                         'SmartFactory/static/src/js/bundle.js',
+            ],
+        'web.assets_qweb': [
+            'SmartFactory/static/src/templates/main.xml'
+        ],
+        },
 }
