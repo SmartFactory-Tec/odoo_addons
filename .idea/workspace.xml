@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22c3373-679e-4e4a-aea7-1eb82d56faf5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/OdooSmartFactory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OdooSmartFactory.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modula/models/product.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modula/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modula/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modula/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modula/models/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Stub" />
         <option value="OdooViewEmpty" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -61,7 +63,7 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="Unnamed" type="ShConfigurationType" nameIsGenerated="true">
-      <option name="SCRIPT_TEXT" value="odoo --addons-path=./" />
+      <option name="SCRIPT_TEXT" value="odoo --addons-path=./ -u modula" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="sudo -u odoo odoo" />
       <option name="SCRIPT_OPTIONS" value="--addons-path=$PROJECT_DIR$/../OdooSmartFactory,/usr/lib/python3.10/site-packages/odoo/addons" />
