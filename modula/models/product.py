@@ -1,10 +1,11 @@
 from odoo import models
 import requests
 
-# Extends the stock module product model with actions for updating the WMS
+# Extends the stock module product model with actions for interfacing with the Modula WMS
 class Product(models.Model):
     _inherit = 'product.product'
 
+    # Register the Product into the WMS when created
     def create(self, vals_list):
         products = super().create(vals_list)
 
@@ -21,9 +22,3 @@ class Product(models.Model):
         requests.post('http://10.22.229.191/Modula/api/Articulos', json=request_contents)
 
         return products
-
-    def _create_model_on_wms(self):
-        for product in self:
-            print(product)
-
-        return True
