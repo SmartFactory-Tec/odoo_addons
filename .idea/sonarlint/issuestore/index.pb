@@ -19,7 +19,5 @@ Q
 !modula/controllers/controllers.py,1/e/1eec0007766dc5032bcf4b4e775d55048f32137c
 F
 modula/views/views.xml,1/d/1d46b27a4a1efc646ff33f04e16b2824115b13b5
-F
-modula/__manifest__.py,8/9/89504d2cffb9ec6d02f0d3b7af8633c370ecad48
 B
 modula/__init__.py,1/8/189778eba4c6502ad83e4bc060e7649e46b2d5c6

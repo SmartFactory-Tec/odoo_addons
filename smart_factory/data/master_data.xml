@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="smart_factory" model="stock.warehouse">
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="name">Smart Factory</field>
+            <field name="code">SF</field>
+        </record>
+    </data>
+</odoo>

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22c3373-679e-4e4a-aea7-1eb82d56faf5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/smart_factory/data/master_data.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modula/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modula/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_factory/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_factory/__manifest__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +42,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PackageJsonUpdateNotifier">
-    <dismissed value="$PROJECT_DIR$/SmartFactory/package.json" />
-  </component>
   <component name="ProjectId" id="28zCj9QytJMZaTKJTgnt72xuwTB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -67,7 +68,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="ShConfigurationType" nameIsGenerated="true">
-      <option name="SCRIPT_TEXT" value="odoo --addons-path=./ -u modula" />
+      <option name="SCRIPT_TEXT" value="odoo --addons-path=./ -u modula -u smart_factory" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="sudo -u odoo odoo" />
       <option name="SCRIPT_OPTIONS" value="--addons-path=$PROJECT_DIR$/../OdooSmartFactory,/usr/lib/python3.10/site-packages/odoo/addons" />
@@ -97,7 +98,7 @@
       <workItem from="1658265612608" duration="176000" />
       <workItem from="1658267851977" duration="79000" />
       <workItem from="1658441745488" duration="6552000" />
-      <workItem from="1658516111407" duration="1054000" />
+      <workItem from="1658516111407" duration="6995000" />
     </task>
     <servers />
   </component>

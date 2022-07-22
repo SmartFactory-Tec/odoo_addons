@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "smart_factory",
+    'name': "Smart Factory",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Base resources from Smart Factory for use in other modules""",
 
     'description': """
         Long description of module's purpose
@@ -20,11 +19,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'stock', 'resource'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        'data/master_data.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
