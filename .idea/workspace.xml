@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22c3373-679e-4e4a-aea7-1eb82d56faf5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modula/data/master_data.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modula/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modula/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modula/data/master_data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modula/data/master_data.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +100,7 @@
       <workItem from="1658441745488" duration="6552000" />
       <workItem from="1658516111407" duration="8030000" />
       <workItem from="1659728815291" duration="340000" />
+      <workItem from="1659974841313" duration="1804000" />
     </task>
     <servers />
   </component>
