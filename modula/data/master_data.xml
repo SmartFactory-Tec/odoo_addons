@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="smart_factory" model="stock.location">
+            <field name="name">Modula Slim</field>
+            <field name="usage">internal</field>
+            <field name="warehouse_id" ref="smart_factory.smart_factory"/>
+            <field name="location_id" ref="stock.stock_location_locations"
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>

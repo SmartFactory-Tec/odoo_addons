@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22c3373-679e-4e4a-aea7-1eb82d56faf5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/smart_factory/data/master_data.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modula/data/master_data.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modula/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modula/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_factory/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_factory/__manifest__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/usr/lib/python3.10/site-packages/odoo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/hiram/Projects/OdooSmartFactory/modula&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -62,6 +61,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modula" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -98,7 +100,8 @@
       <workItem from="1658265612608" duration="176000" />
       <workItem from="1658267851977" duration="79000" />
       <workItem from="1658441745488" duration="6552000" />
-      <workItem from="1658516111407" duration="6995000" />
+      <workItem from="1658516111407" duration="8030000" />
+      <workItem from="1659728815291" duration="340000" />
     </task>
     <servers />
   </component>
