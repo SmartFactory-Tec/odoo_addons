@@ -311,3 +311,6 @@ cython_debug/
 /.sonar/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,intellij+all,pycharm+all,sonar
+
+.odoo_env
+.postgres_end
