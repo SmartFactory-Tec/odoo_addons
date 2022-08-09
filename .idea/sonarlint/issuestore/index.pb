@@ -18,3 +18,5 @@ I
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 I
 smart_factory/__init__.py,e/5/e5b2fbff548b09879ab4e17a3c5ff873f6f05083
+F
+modula/__manifest__.py,8/9/89504d2cffb9ec6d02f0d3b7af8633c370ecad48

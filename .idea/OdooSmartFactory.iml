@@ -9,13 +9,8 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/a" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/b" />
     </content>
-    <content url="file://$MODULE_DIR$/../odoo-stubs/odoo-stubs">
-      <excludeFolder url="file://$MODULE_DIR$/../odoo-stubs/odoo-stubs" />
-    </content>
-    <content url="file:///usr/lib/python3.10/site-packages/odoo">
-      <excludeFolder url="file:///usr/lib/python3.10/site-packages/odoo" />
-    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="odoo" />
   </component>
 </module>

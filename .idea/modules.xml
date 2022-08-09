@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/OdooSmartFactory.iml" filepath="$PROJECT_DIR$/.idea/OdooSmartFactory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../odoo/.idea/odoo.iml" filepath="$PROJECT_DIR$/../odoo/.idea/odoo.iml" />
     </modules>
   </component>
 </project>
