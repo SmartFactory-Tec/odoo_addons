@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
+        <record id="base.main_company" model="res.company">
+            <field name="name">Tecnológico de Monterrey</field>
+        </record>
         <record id="smart_factory" model="stock.warehouse">
-            <field name="partner_id" ref="base.main_partner"/>
+            <field name="company_id" ref="base.main_company"/>
             <field name="name">Smart Factory</field>
             <field name="code">SF</field>
         </record>
