@@ -5,16 +5,18 @@ import requests
 
 
 # ModulaMove model extended to include validation and synchronization with the Modula WMS
+
+location_name = 'Modula Slim'
 class ModulaMove(models.Model):
     _inherit = 'stock.move'
 
     # Send the move lines to modula
     def _send_modula_entries(self, moves: Type[StockMove]):
-        modula_moves = moves.filtered(lambda move: move.location_dest_id.name == 'Modula' and move.state == 'assigned')
+        modula_moves = moves.filtered(lambda move: move.location_dest_id.name == location_name and move.state == 'assigned')
 
         entry_requests = list(map(lambda move: {
             "Orden": move.id,
-            "Articulo": move.product_id.id,
+            "Articulo": move.product_id.default_code,
             "Cantidad": move.product_qty,
         }, modula_moves))
 
@@ -28,11 +30,11 @@ class ModulaMove(models.Model):
     # Send the move lines to modula
     def _send_modula_exits(self, moves: Type[StockMove]):
         modula_moves = moves.filtered(
-            lambda move: move.location_id.name == 'Modula' and move.state == 'assigned')
+            lambda move: move.location_id.name == location_name and move.state == 'assigned')
 
         exit_requests = list(map(lambda move: {
             "Orden": move.id,
-            "Articulo": move.product_id.id,
+            "Articulo": move.product_id.default_code,
             "Cantidad": move.product_qty,
         }, modula_moves))
 
@@ -43,7 +45,7 @@ class ModulaMove(models.Model):
             print(response.content)
 
     def _confirm_modula_entry(self, moves: Type[StockMove]):
-        modula_moves = moves.filtered(lambda move: move.location_dest_id.name == 'Modula' and move.state == 'done')
+        modula_moves = moves.filtered(lambda move: move.location_dest_id.name == location_name and move.state == 'done')
 
     def create(self, vals_list):
         created_moves = super(ModulaMove, self).create(vals_list)

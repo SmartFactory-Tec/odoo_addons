@@ -1,39 +1,40 @@
 from odoo import models, fields, exceptions
+from odoo.addons.uom.models.uom_uom import UoM
 import requests
 import logging
 _logger = logging.getLogger(__name__)
 
 # Extends the stock module product model with actions for interfacing with the Modula WMS
-class Product(models.Model):
-    _inherit = 'product.product'
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
 
 
     # Register the Product into the WMS when created
     def create(self, vals_list):
+        products = super(ProductTemplate, self).create(vals_list)
 
         request_contents = []
 
         for vals in vals_list:
-            # Values are not directly stored on the product, get the template associated with it
-            template = self.env['product.template'].browse(vals['product_tmpl_id'])
+            _logger.debug(vals)
+
+        for product in products:
+            _logger.debug(product.description)
             request_contents.append({
-                'Articulo': template.default_code,
-                'Descripcion': template.name,
-                'Umi': template.uom_id.name,
+                'Articulo': product,
+                'Descripcion': product.name,
+                'Umi': product.uom_id.name,
             })
 
-        # Create the product objects
-        products = super(Product, self).create(vals_list)
+
 
         _logger.debug("Request contents:")
         _logger.debug(request_contents)
 
-        # Try to call the modula API
         response = requests.post('http://10.22.229.191/Modula/api/Articulos', json=request_contents)
 
         if (response.status_code != 200):
             # TODO find out if a better error type can be implemented
             raise exceptions.ValidationError("Modula request error:\n" + str(response.content))
 
-        # Store the new products
         return products
