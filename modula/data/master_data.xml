@@ -5,8 +5,25 @@
             <field name="name">Modula Slim</field>
             <field name="usage">internal</field>
             <field name="warehouse_id" ref="smart_factory.smart_factory"/>
-            <field name="location_id" ref="stock.stock_location_locations"/>
+<!--            TODO find out if there's a better way of finding the location for this, without depending on the spanish language setting-->
+            <field name="location_id" search="[('complete_name', '=', 'SF/Existencias')]"/>
             <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="sf_to_modula_move_t" model="stock.picking.type">
+            <field name="name">Transferencia interna hacia Modula</field>
+            <field name="sequence_code">MODIN</field>
+            <field name="default_location_dest_id" search="[('complete_name', '=', 'SF/Existencias/Modula Slim')]"/>
+            <field name="warehouse_id" ref="smart_factory.smart_factory"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="code">internal</field>
+        </record>
+        <record id="sf_from_modula_move_t" model="stock.picking.type">
+            <field name="name">Transferencia interna desde Modula</field>
+            <field name="sequence_code">MODOUT</field>
+            <field name="default_location_src_id" search="[('complete_name', '=', 'SF/Existencias/Modula Slim')]"/>
+            <field name="warehouse_id" ref="smart_factory.smart_factory"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="code">internal</field>
         </record>
     </data>
 </odoo>
