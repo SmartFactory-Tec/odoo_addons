@@ -5,8 +5,6 @@ services:
     ports:
       - "80:80"
       - "8080:8080"
-    networks:
-      - front-tier
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -16,12 +14,10 @@ services:
     depends_on:
       - db
     env_file: .odoo_env
-    networks:
-      - front-tier
-      - back-tier
     labels:
       - "traefik.http.routers.odoo.rule=!PathPrefix(`/adminer/`) && !Path(`/adminer`)"
       - "traefik.http.services.odoo.loadbalancer.server.port=8069"
+      - "traefik.docker.network=front-tier"
     volumes:
       - type: bind
         source: ./
@@ -29,12 +25,13 @@ services:
       - type: volume
         source: odoo-data
         target: /var/lib/odoo
+      - type: bind
+        source: ./odoo_config
+        target: /etc/odoo
 
   adminer:
     image: adminer
     restart: unless-stopped
-    networks:
-      - front-tier
     labels:
       - "traefik.http.routers.adminer.rule=PathPrefix(`/adminer/`) || Path(`/adminer`)"
 
@@ -44,9 +41,6 @@ services:
     environment:
       - PGDATA=/var/lib/postgresql/data/pgdata
     env_file: .postgres_env
-    networks:
-      - front-tier
-      - back-tier
     volumes:
       - type: volume
         source: postgres-data
@@ -55,7 +49,3 @@ services:
 volumes:
   odoo-data:
   postgres-data:
-
-networks:
-  front-tier: {}
-  back-tier: {}
