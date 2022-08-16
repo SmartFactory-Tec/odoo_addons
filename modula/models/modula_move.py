@@ -1,67 +1,57 @@
 from typing import List, Type
-from odoo import models
+
+import odoo.api
+from odoo import models, exceptions
 from odoo.addons.stock.models.stock_move import StockMove
 import requests
 
 
 # ModulaMove model extended to include validation and synchronization with the Modula WMS
+# When the moves quantity done equals the quantity requested, the move is completed
 
-location_name = 'Modula Slim'
+modula_location_name = 'Modula Slim'
 class ModulaMove(models.Model):
     _inherit = 'stock.move'
 
-    # Send the move lines to modula
-    def _send_modula_entries(self, moves: Type[StockMove]):
-        modula_moves = moves.filtered(lambda move: move.location_dest_id.name == location_name and move.state == 'assigned')
+    def _process_state_change(self, vals):
+        # When a move line changes into 'assigned', it is ready for picking
+        state = vals['state']
+        if state == 'assigned':
+            self._process_assigned_moves(vals)
 
-        entry_requests = list(map(lambda move: {
+    def _process_assigned_moves(self, vals):
+        # Filter entries and exits for modula only
+        entries = self.filtered(lambda move: move.location_dest_id.name == modula_location_name)
+        exits = self.filtered(lambda move: move.location_id.name == modula_location_name)
+
+        # Generate json request for both entries and exits
+        entry_api_request = list(map(lambda move: {
             "Orden": move.id,
             "Articulo": move.product_id.default_code,
             "Cantidad": move.product_qty,
-        }, modula_moves))
+        }, entries))
 
-        print("entry request")
-        print(entry_requests)
-
-        if len(entry_requests) != 0:
-            response = requests.post('http://10.22.229.191/Modula/api/Entradas', json=entry_requests)
-            print(response.content)
-
-    # Send the move lines to modula
-    def _send_modula_exits(self, moves: Type[StockMove]):
-        modula_moves = moves.filtered(
-            lambda move: move.location_id.name == location_name and move.state == 'assigned')
-
-        exit_requests = list(map(lambda move: {
+        exit_api_request = list(map(lambda move: {
             "Orden": move.id,
             "Articulo": move.product_id.default_code,
             "Cantidad": move.product_qty,
-        }, modula_moves))
+        }, exits))
 
-        print("exit request")
-        print(exit_requests)
-        if len(exit_requests) != 0:
-            response = requests.post('http://10.22.229.191/Modula/api/Salidas', json=exit_requests)
-            print(response.content)
+        # Send entries and exits if they're not empty
+        if len(entry_api_request) != 0:
+            response = requests.post('http://10.22.229.191/Modula/api/Entradas', json=entry_api_request)
+            if response.status_code != 200:
+                raise exceptions.ValidationError('Modula API error: ' + str(response.content))
 
-    def _confirm_modula_entry(self, moves: Type[StockMove]):
-        modula_moves = moves.filtered(lambda move: move.location_dest_id.name == location_name and move.state == 'done')
-
-    def create(self, vals_list):
-        created_moves = super(ModulaMove, self).create(vals_list)
-
-        self._send_modula_entries(created_moves)
-        self._send_modula_exits(created_moves)
-
-        return created_moves
+        if len(exit_api_request) != 0:
+            response = requests.post('http://10.22.229.191/Modula/api/Salidas', json=exit_api_request)
+            if response.status_code != 200:
+                raise exceptions.ValidationError('Modula API error: ' + str(response.content))
 
     def write(self, vals):
-        # First do the update
-        super(ModulaMove, self).write(vals)
+        if ('state' in vals):
+            self._process_state_change(vals)
 
-        # Then request an entry picking into Modula for any qualifying moves
-        self._send_modula_entries(self)
-        # Finally request exit pickings into Modula for any qualifying moves
-        self._send_modula_exits(self)
+        super(ModulaMove, self).write(vals)
 
         return True
