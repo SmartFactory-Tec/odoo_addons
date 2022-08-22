@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/OdooSmartFactory.iml" filepath="$PROJECT_DIR$/.idea/OdooSmartFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/../odoo/.idea/odoo.iml" filepath="$PROJECT_DIR$/../odoo/.idea/odoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../odoo-stubs/odoo-stubs/.idea/odoo-stubs.iml" filepath="$PROJECT_DIR$/../../odoo-stubs/odoo-stubs/.idea/odoo-stubs.iml" />
     </modules>
   </component>
 </project>

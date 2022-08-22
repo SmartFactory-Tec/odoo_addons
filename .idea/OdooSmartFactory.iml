@@ -12,5 +12,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="odoo" />
+    <orderEntry type="module" module-name="odoo-stubs" />
   </component>
 </module>
