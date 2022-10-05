@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22c3373-679e-4e4a-aea7-1eb82d56faf5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/OdooSmartFactory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OdooSmartFactory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modula/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modula/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modula/models/modula_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/modula/models/modula_move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modula/models/modula_move_line.py" beforeDir="false" afterPath="$PROJECT_DIR$/modula/models/modula_move_line.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modula/models/product_template.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../odoo/addons/product/models/res_company.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../odoo/addons/product/models/res_company.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +43,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="28zCj9QytJMZaTKJTgnt72xuwTB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultOdooViewFileTemplate&quot;: &quot;OdooViewEmpty&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -76,19 +74,36 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="ShConfigurationType" nameIsGenerated="true">
-      <option name="SCRIPT_TEXT" value="odoo --addons-path=./ -u modula -u smart_factory" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="sudo -u odoo odoo" />
-      <option name="SCRIPT_OPTIONS" value="--addons-path=$PROJECT_DIR$/../OdooSmartFactory,/usr/lib/python3.10/site-packages/odoo/addons" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+    <configuration name="odoo-bin" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="odoo" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="false" />
-      <option name="EXECUTE_SCRIPT_FILE" value="false" />
-      <envs />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../odoo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../odoo/odoo-bin" />
+      <option name="PARAMETERS" value="--addons-path=$PROJECT_DIR$/../odoo_addons,./addons -u=smart_factory,modula" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
   </component>
@@ -119,18 +134,26 @@
       <workItem from="1660753113062" duration="618000" />
       <workItem from="1660839736802" duration="3319000" />
       <workItem from="1661183468579" duration="4756000" />
+      <workItem from="1663608896809" duration="1337000" />
+      <workItem from="1663687918597" duration="863000" />
+      <workItem from="1663688792696" duration="990000" />
+      <workItem from="1663690006015" duration="152000" />
+      <workItem from="1663690161245" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../odoo/addons/product/models/product.py</url>
-          <line>368</line>
+          <line>371</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -139,5 +162,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OdooSmartFactory$odoo.coverage" NAME="odoo Coverage Results" MODIFIED="1658173470461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/OdooSmartFactory$main.coverage" NAME="main Coverage Results" MODIFIED="1652211341980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/odoo_addons$odoo_bin.coverage" NAME="odoo-bin Coverage Results" MODIFIED="1663688296038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../odoo" />
   </component>
 </project>

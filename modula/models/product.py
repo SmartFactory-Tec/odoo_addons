@@ -19,7 +19,7 @@ class Product(models.Model):
             request_contents.append({
                 'Articulo': template.default_code,
                 'Descripcion': template.name,
-                'Umi': template.uom_id.name,
+                'Umi': 'PZ',
             })
 
         # Create the product objects

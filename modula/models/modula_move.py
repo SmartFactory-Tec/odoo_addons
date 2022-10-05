@@ -1,8 +1,6 @@
 from typing import List, Type
 
-import odoo.api
-from odoo import models, exceptions
-from odoo.addons.stock.models.stock_move import StockMove
+from odoo import models, exceptions, api
 import requests
 import logging
 

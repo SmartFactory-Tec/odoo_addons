@@ -18,3 +18,11 @@ G
 modula/models/models.py,a/d/ad0753a245f619947900073a2ae7719f72642ed7
 K
 modula/data/master_data.xml,3/2/32c88f04ad4cf073e4f4eda28dc1d074bcb26a5f
+H
+modula/models/product.py,f/8/f8cddd29ce884c6c7beaf2cb7dbc29e4ac7a013a
+I
+modula/models/__init__.py,9/4/94ee1839a300c5462370040e68d3e3f71b5acf16
+F
+modula/__manifest__.py,8/9/89504d2cffb9ec6d02f0d3b7af8633c370ecad48
+L
+modula/models/modula_move.py,0/1/01076994a33b207188ba8a4c5c5d7f29f2cbf1ae
