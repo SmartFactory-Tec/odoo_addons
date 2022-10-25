@@ -59,15 +59,16 @@ class ModulaMove(models.Model):
 
     def _process_done_moves(self, vals):
         _logger.debug("Showing done moves")
+        modula_moves = self.filtered(lambda move: move.location_dest_id.name == modula_location_name or move.location_id.name == modula_location_name)
 
-        if len(self) == 0: return
+        if len(modula_moves) == 0: return
 
-        for move in self:
+        for move in modula_moves:
             _logger.debug(move.product_id.name)
 
-        self.ensure_one()
+        modula_moves.ensure_one()
 
-        move = self[0]
+        move = modula_moves[0]
 
         # Request information about the current picking
         response = requests.get('http://10.22.229.191/Modula/api/Picking')
