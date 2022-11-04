@@ -4,7 +4,7 @@
         <record id="base.main_company" model="res.company">
             <field name="name">Tecnológico de Monterrey</field>
         </record>
-        <record id="smart_factory" model="stock.warehouse">
+        <record id="smart_factory_warehouse" model="stock.warehouse">
             <field name="company_id" ref="base.main_company"/>
             <field name="name">Smart Factory</field>
             <field name="code">SF</field>
