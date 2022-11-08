@@ -1,7 +1,7 @@
 import requests
 
 from odoo import http
-from odoo.http import request, Response, HttpRequest
+from odoo.http import request, Response, Request
 
 class ModulaController(http.Controller):
 
@@ -44,10 +44,19 @@ class ModulaController(http.Controller):
             'location_dest_id': dest_location_id
         }])
 
+        move_line = request.env['stock.move.line'].create([{
+            'location_id': src_location_id ,
+            'location_dest_id': dest_location_id,
+            'product_id': product[0].id,
+            'product_uom_id': product[0].uom_id.id,
+            'product_uom_qty': qty,
+            'picking_id': picking[0].id,
+        }])
+
         move[0]._action_confirm()
 
-        print(move[0].id)
-        return Response(str(move[0].id), status=200)
+        print(picking[0].id)
+        return Response(str(picking[0].id), status=200)
 #
     @http.route('/modula/tray_status', auth='public', type='http',methods=['get'])
     def tray_status(self, **kw):
@@ -62,13 +71,22 @@ class ModulaController(http.Controller):
 
 
     @http.route('/modula/request_confirmation', auth='none', type='http',methods=['post'], csrf=False)
-    def request_confirmation(self, move_id):
+    def request_confirmation(self, picking_id):
         auth = request.httprequest.authorization
         request.session.authenticate('odoo', auth.username, auth.password)
 
-        move = request.env['stock.picking'].browse(int(move_id))
+        picking = request.env['stock.picking'].browse(int(picking_id))
 
-        print(move.product_qty)
-        move._action_done()
+        picking.button_validate()
+
+        transfer = request.env['stock.immediate.transfer'].create({
+            'pick_ids': [picking_id],
+            'immediate_transfer_line_ids': [{
+                'to_immediate': True,
+                'picking_id': picking_id,
+            }]
+        })
+
+        transfer.process()
 
         return Response(status=200)
