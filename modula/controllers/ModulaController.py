@@ -9,7 +9,7 @@ class ModulaController(http.Controller):
 
     def _do_basic_auth(self):
         auth = request.httprequest.authorization
-        request.session.authenticate('test', auth.username, auth.password)
+        request.session.authenticate(request.env.cr.dbname, auth.username, auth.password)
 
     @http.route('/modula/input_request', auth='public', type='http', methods=['post'], csrf=False)
     def input_request(self, code, qty):
