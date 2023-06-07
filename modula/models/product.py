@@ -37,3 +37,33 @@ class Product(models.Model):
 
         # Store the new products
         return products
+    
+    def action_transfer_to_sf(self):
+        sf_location = self.env['stock.location'].search([('complete_name', '=', 'SF/Stock')])
+        if sf_location:
+            warehouse = self.env['stock.warehouse'].search([], limit=1)
+            if warehouse:
+                picking_type = self.env.ref('stock.picking_type_internal')
+                picking_vals = {
+                    'picking_type_id': picking_type.id,
+                    'location_id': warehouse.lot_stock_id.id,
+                    'location_dest_id': sf_location[0].id,
+                }
+                picking = self.env['stock.picking'].create(picking_vals)
+
+                move_vals = {
+                    'name': self.name,
+                    'product_id': self.id,
+                    'product_uom_qty': 1,
+                    'location_id': warehouse.lot_stock_id.id,
+                    'location_dest_id': sf_location[0].id,
+                    'picking_id': picking.id,
+                }
+                move = self.env['stock.move'].create(move_vals)
+
+                picking.action_confirm()
+                picking.action_assign()
+                move._action_done()
+
+                return True
+        return False
